@@ -29,6 +29,7 @@ class userController extends Controller
         $token = auth()->login($user);
 
         return $this->respondWithToken($token);
+        
     }
 
     public function login()
@@ -38,8 +39,11 @@ class userController extends Controller
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+        $user =auth()->user();
 
-        return $this->respondWithToken($token);
+        //return $this->respondWithToken($token);
+        return response()->json(['token' => $token,'user'=>$user]);
+
     }
 
     public function logout()

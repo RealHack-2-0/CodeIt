@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 import test from './components/test.vue'
 import register from './components/register.vue'
-import login from './components/login.vue'
+import login from './components/Login.vue'
 
 
 

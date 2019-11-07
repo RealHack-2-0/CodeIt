@@ -1,47 +1,77 @@
 <template>
-    <div class = "container">
-         <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-          <v-flex xs20 sm12 md8>
-            <v-card class="elevation-12">
-              <v-toolbar dark color="primary">
-                <v-toolbar-title>Login</v-toolbar-title>
-                <v-spacer></v-spacer>
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on }">
-                    <v-btn :href="source" icon large target="_blank" v-on="on">
-                      <v-icon large>code</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Source</span>
-                </v-tooltip>
-                <v-tooltip right>
-                  <template v-slot:activator="{ on }">
-                    <v-btn icon large href="https://codepen.io/johnjleider/pen/wyYVVj" target="_blank" v-on="on">
-                      <v-icon large>mdi-codepen</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Codepen</span>
-                </v-tooltip>
-              </v-toolbar>
-              <v-card-text>
-                <v-form>
-                  <v-text-field prepend-icon="email" name="email" label="Email" type="email"></v-text-field>
-                  <v-text-field id="password" prepend-icon="lock" name="pass" label="Password" type="password"></v-text-field>
-                </v-form>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn dark >Login</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
 
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      </div>
+
+      <!-- Login Form -->
+      <form>
+        <input
+          type="text"
+          id="login"
+          class="fadeIn second"
+          name="login"
+          placeholder="email"
+          v-model="login.email"
+        />
+        <input
+          type="password"
+          id="password"
+          class="fadeIn third"
+          name="login"
+          placeholder="password"
+          v-model="login.password"
+        />
+      </form>
+      <button @click="loginUser">Login</button>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
+import axios from "axios";
 
+export default {
+  name: "app",
+  data() {
+    return {
+      login: {
+        email: "",
+        password: ""
+      }
+    };
+  },
+
+  methods: {
+    loginUser() {
+      axios
+        .post(this.$baseUrl + "/login", this.login, {})
+        .then(response => {
+          let $token = response.data.token;
+          console.log($token);
+
+          if ($token) {
+            console.log($token);
+            localStorage.setItem("token", $token);
+            localStorage.setItem("user", response.data.user);
+
+            this.$router.push("/");
+          }
+        })
+        .catch(error => {
+          console.log(error.response);
+          console.log("ERROR");
+        });
+    }
+  }
+};
 </script>
