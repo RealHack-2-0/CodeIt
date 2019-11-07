@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
 import test from './components/test.vue'
+import register from './components/register.vue'
+import login from './components/login.vue'
 
 
 
@@ -23,8 +25,10 @@ const router = new VueRouter({
 
   routes: [
 
-    { path: "/", component: test },
+
     { path: "/test", component: test },
+    { path: "/register", component: register },
+    { path: "/login", component: login },
 
 
   ],
