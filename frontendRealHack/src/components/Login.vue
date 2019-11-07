@@ -43,7 +43,7 @@
       </form>
     </div>
     <div class="alert alert-info" role="alert">
-      Don't have an account yet? <a href="#" class="alert-link">Register here</a>.
+      Don't have an account yet? <a href="register" class="alert-link">Register here</a>.
     </div>
   </div>
 </template>

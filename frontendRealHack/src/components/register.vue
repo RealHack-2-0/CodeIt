@@ -49,7 +49,7 @@
 
     </div>
     <div class="alert alert-info" role="alert">
-      Already have an account? <a href="#" class="alert-link">Sign in</a>.
+      Already have an account? <a href="login" class="alert-link">Sign in</a>.
     </div>
  </div>
   
