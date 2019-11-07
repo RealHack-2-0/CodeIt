@@ -62,7 +62,7 @@ export default {
         .post(this.$baseUrl + "/register", this.register, {})
         .then(response => {
           this.$router.push({
-            path: "/loginPage"
+            path: "/login"
           });
         })
         .catch(error => {
