@@ -17,12 +17,12 @@
   <div class="col-sm-2">
   <div class="btn-group" role="group" aria-label="Button group with
 nested dropdown">
-  <button type="button" class="btn btn-secondary" @click="like()" >Like</button>
-  <button type="button" class="btn btn-secondary" @click="Dislike()">Dislike</button>
+  <button type="button" class="btn btn-secondary" @click="like(item.QID)" >Like</button>
+  <button type="button" class="btn btn-secondary" @click="Dislike(item.QID)">Dislike</button>
 
 
 </div>
-<h4>Votes<span class="label label-default" >{{Qvalue}}</span></h4>
+<h4>Votes<span class="label label-default" >  {{item.vote}}</span></h4>
 </div>
   <div class="col-sm-8">
     <p class="card-text">{{item.question}}</p>
@@ -47,6 +47,11 @@ export default {
     return {
        question: [],
        Qvalue:0,
+       revo: {
+        question: "",
+          UID: "",
+        
+      },
     };
   },
 
@@ -67,17 +72,45 @@ console.log("******************");
           console.log("ERROR");
         });
     },
-    like(){
+    like(QID){
       
        this.Qvalue = this.Qvalue +1;
+ console.log(QID);
+        axios
+        .post(this.$baseUrl + "/upVote", {
+          'QID':QID
+        }, {})
+        .then(response => {
+           console.log("********$$$$$$$$$$$$$$$4**********");
+           this. questionItems();
+          return;
+        })
+        .catch(error => {
+          console.log(error.response);
+          console.log("ERROR");
+        });
+
     },
     
-    Dislike(){
-      if( this.Qvalue<=0){
-        this.Qvalue =0;
-      }else{this.Qvalue = this.Qvalue -1;}
+    Dislike(QID){
+     this.Qvalue = this.Qvalue -1;
+      console.log(QID);
+        axios
+        .post(this.$baseUrl + "/downVote", {
+          'QID':QID
+        }, {})
+        .then(response => {
+           console.log("********$$$$$$$$$$$$$$$4**********");
+            this. questionItems();
+          return;
+        })
+        .catch(error => {
+          console.log(error.response);
+          console.log("ERROR");
+        });
        
     },
+    
      
  
 
