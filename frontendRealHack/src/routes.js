@@ -8,6 +8,7 @@ import Question from './components/Question.vue'
 import register from './components/register.vue'
 import login from './components/Login.vue'
 import AddQuestion from './components/AddQuestion.vue'
+import Answers from './components/AddQuestion.vue'
 
 
 

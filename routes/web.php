@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Events\CommentAdded;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,13 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/fire', function () {
+    event(new CommentAdded);
+    return 'fired';
+
+     
 });
 
 Auth::routes();
