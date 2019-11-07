@@ -11,7 +11,7 @@
             <div>
               <div class="card text-center">
                 <div class="card-header">
-                  <h4>Question {{answers[0].QID}}</h4>
+                  <h4>Question</h4>
                 </div>
                 <div class="card-body">
                   <h4 class="card-title">HAVE a SOLUTION?</h4>
