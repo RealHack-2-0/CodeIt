@@ -122,8 +122,48 @@ export default {
           console.log("ERROR");
         });
     },
-    like() {
+    like(QID) {
       this.Qvalue = this.Qvalue + 1;
+      console.log(QID);
+      axios
+        .post(
+          this.$baseUrl + "/upVote",
+          {
+            QID: QID
+          },
+          {}
+        )
+        .then(response => {
+          console.log("********$$$$$$$$$$$$$$$4**********");
+          this.questionItems();
+          return;
+        })
+        .catch(error => {
+          console.log(error.response);
+          console.log("ERROR");
+        });
+    },
+
+    Dislike(QID) {
+      this.Qvalue = this.Qvalue - 1;
+      console.log(QID);
+      axios
+        .post(
+          this.$baseUrl + "/downVote",
+          {
+            QID: QID
+          },
+          {}
+        )
+        .then(response => {
+          console.log("********$$$$$$$$$$$$$$$4**********");
+          this.questionItems();
+          return;
+        })
+        .catch(error => {
+          console.log(error.response);
+          console.log("ERROR");
+        });
     },
 
     Dislike() {
