@@ -1,45 +1,58 @@
 <template>
-  <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-
-      <!-- Icon -->
-      <div class="fadeIn first">
-        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-      </div>
-
-      <!-- Login Form -->
-      <form>
-        <input
-          type="text"
-          id="name"
-          class="fadeIn second"
+ <div class="col-sm-12">
+    <div class="card text-center  " style="width: 28rem;">
+<form>
+  <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Register</strong>
+    </h5>
+  <div class="form-colum">
+  <div class="form-group mx-sm-3 mb-2 ">
+      <label for="inputEmail4"></br>Email</label>
+      <input  
+          
+          name="login"
+         
+          v-model="register.email" type="email" class="form-control" id="inputEmail4" placeholder="Enter email">
+          <small
+            id="emailHelp"
+            class="form-text text-muted"
+          >We'll never share your email with anyone else.</small>
+    </div>
+    </br>
+     <div class="form-group mx-sm-3 mb-2 ">
+    <label for="FullName">User name</label>
+    <input 
+     type="text"
+         
+          
           name="name"
-          placeholder="name"
+          placeholder="Enter a user name"
           v-model="register.name"
-        />
-        <input
-          type="text"
-          id="login"
-          class="fadeIn second"
+     class="form-control" id="inputAddress" >
+  </div>
+    </br>
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputPassword4">Password</label>
+      <input
+       
+         
           name="login"
-          placeholder="email"
-          v-model="register.email"
-        />
-        <input
-          type="password"
-          id="password"
-          class="fadeIn third"
-          name="login"
-          placeholder="password"
+          
           v-model="register.password"
-        />
-      </form>
-      <button @click="registerUser">Register</button>
-
-      <!-- Remind Passowrd -->
+       type="password" class="form-control" id="inputPassword4" placeholder="Password">
     </div>
   </div>
+ </br></br>
+ 
+  <button type="submit" class="btn btn-primary" @click="registerUser">Register</button>
+</form>
+
+    </div>
+    <div class="alert alert-info" role="alert">
+      Already have an account? <a href="login" class="alert-link">Sign in</a>.
+    </div>
+ </div>
+  
 </template>
 
 <script>
@@ -72,3 +85,16 @@ export default {
   }
 };
 </script>
+<style>
+  .selector-for-some-widget {
+  box-sizing: content-box;
+}
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 20px; /* Added */
+}
+form {
+    padding: 11px;
+}
+  </style>
