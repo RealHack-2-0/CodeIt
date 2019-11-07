@@ -33,10 +33,11 @@
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+      
         <br />
         <div></div>
       </form>
+        <button type="submit" class="btn btn-primary" @click="loginUser">Log in</button>
     </div>
   </div>
 </template>
@@ -67,6 +68,9 @@ export default {
             console.log($token);
             localStorage.setItem("token", $token);
             localStorage.setItem("user", response.data.user);
+
+         let $user=localStorage.getItem("user");
+            console.log( $user);
 
             this.$router.push("/");
           }

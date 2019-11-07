@@ -26,5 +26,6 @@ Route::post('/login', 'userController@login');
 Route::post('/ask', 'QuestionController@ask');
 Route::post('/upVote', 'QuestionController@upVote');
 Route::post('/downVote', 'QuestionController@downVote');
+Route::post('/getQuestions', 'QuestionController@getAll');
 Route::post('/answer', 'AnswerController@answer');
 Route::post('/getAnswers', 'AnswerController@getAnswers');
