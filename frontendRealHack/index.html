@@ -21,6 +21,24 @@
     integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
     crossorigin="anonymous"></script>
 
+
+
+  <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('912a80bcee8a92bf991b', {
+      cluster: 'ap2',
+      forceTLS: true
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function (data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
 </head>
 
 <body>
