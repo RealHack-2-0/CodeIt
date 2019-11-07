@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
 import test from './components/test.vue'
+import Question from './components/Question.vue'
 
 
 
@@ -25,6 +26,7 @@ const router = new VueRouter({
 
     { path: "/", component: test },
     { path: "/test", component: test },
+    { path: "/question", component: Question },
 
 
   ],
