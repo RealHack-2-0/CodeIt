@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
+
+
+    public function getAll(){
+
+        $question=question::all();
+        return response()->json(['question'=>$question],200);
+
+     }
  
     public function ask(Request $request)
     {

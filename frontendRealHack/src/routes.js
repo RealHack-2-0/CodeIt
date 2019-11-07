@@ -7,7 +7,7 @@ import test from './components/test.vue'
 import Question from './components/Question.vue'
 import register from './components/register.vue'
 import login from './components/Login.vue'
-
+import AddQuestion from './components/AddQuestion.vue'
 
 
 
@@ -31,6 +31,7 @@ const router = new VueRouter({
     { path: "/question", component: Question },
     { path: "/register", component: register },
     { path: "/login", component: login },
+    { path: "/addQuestion", component: AddQuestion },
 
 
   ],

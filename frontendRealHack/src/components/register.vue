@@ -44,8 +44,8 @@
   </div>
  </br></br>
  
-  <button type="submit" class="btn btn-primary" @click="registerUser">Register</button>
 </form>
+  <button class="btn btn-primary" @click="registerUser">Register</button>
 
     </div>
     <div class="alert alert-info" role="alert">
