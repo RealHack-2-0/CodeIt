@@ -31,10 +31,6 @@ class AnswerController extends Controller
     {
         
         $table = answer::where(['QID'=>$request->input('QID')])->get();
-
-         
-
-
          return response()->json(['answers' => $table]);
          
         
