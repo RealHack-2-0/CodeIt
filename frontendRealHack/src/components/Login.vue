@@ -1,38 +1,42 @@
 <template>
-  <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-
-      <!-- Icon -->
-      <div class="fadeIn first">
-        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-      </div>
-
-      <!-- Login Form -->
+  <div class="col-sm-6">
+    <div class="card text-center " style="width: 28rem;">
       <form>
-        <input
-          type="text"
-          id="login"
-          class="fadeIn second"
-          name="login"
-          placeholder="email"
-          v-model="login.email"
-        />
-        <input
-          type="password"
-          id="password"
-          class="fadeIn third"
-          name="login"
-          placeholder="password"
-          v-model="login.password"
-        />
-      </form>
-      <button @click="loginUser">Login</button>
+       <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Sign up</strong>
+    </h5>
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            name="login"
+            v-model="login.email"
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+          <small
+            id="emailHelp"
+            class="form-text text-muted"
+          >We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            name="login"
+            placeholder="password"
+            v-model="login.password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
 
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
-      </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br />
+        <div></div>
+      </form>
     </div>
   </div>
 </template>
@@ -75,3 +79,16 @@ export default {
   }
 };
 </script>
+ <style>
+  .selector-for-some-widget {
+  box-sizing: content-box;
+}
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 20px; /* Added */
+}
+form {
+    padding: 11px;
+}
+  </style>
