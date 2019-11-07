@@ -23,3 +23,8 @@ Route::get('getUser', 'userController@getAll');
 Route::post('/register', 'userController@register');
 
 Route::post('/login', 'userController@login');
+Route::post('/ask', 'QuestionController@ask');
+Route::post('/upVote', 'QuestionController@upVote');
+Route::post('/downVote', 'QuestionController@downVote');
+Route::post('/answer', 'AnswerController@answer');
+Route::post('/getAnswers', 'AnswerController@getAnswers');
