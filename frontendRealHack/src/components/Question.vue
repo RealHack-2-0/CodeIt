@@ -108,7 +108,6 @@ export default {
         });
     },
     questionItems() {
-      console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
       axios
 
         .post(this.$baseUrl + "/getQuestions")
