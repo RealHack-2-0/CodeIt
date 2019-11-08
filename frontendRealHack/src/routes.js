@@ -10,7 +10,7 @@ import login from './components/Login.vue'
 import AddQuestion from './components/AddQuestion.vue'
 import Answers from './components/AddQuestion.vue'
 
-
+import home from './components/home.vue'
 
 
 const router = new VueRouter({
@@ -33,7 +33,7 @@ const router = new VueRouter({
     { path: "/register", component: register },
     { path: "/login", component: login },
     { path: "/addQuestion", component: AddQuestion },
-
+    { path: "/", component: home },
 
   ],
 
