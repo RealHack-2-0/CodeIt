@@ -1,53 +1,65 @@
 <template>
   <div class="container">
-  <div class="flex-container">
-    <div class="row full">
-    <div class="col-md-12">
-      <div class="form-container">
-                <div class="form-container-in">
-        </div>
-        <div class="log-container">
-          <img id="logo" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" alt="">
-          
-      </div>
-        
-        <div class="row">
-          
-          <div class="col-md-12">
-          
-              <div id="social-platforms">
-                <div class="media-container">
-                  <a class="btnn btnn-icon btnn-facebook" href="login"><i class="fa fa-facebook">                           </i><span>LOG IN</span></a>
+    <div class="flex-container">
+      <div class="row full">
+        <div class="col-md-12">
+          <div class="form-container">
+            <div class="form-container-in"></div>
+            <div class="log-container">
+              <img
+                id="logo"
+                src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png"
+                alt
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div id="social-platforms">
+                  <div class="media-container">
+                    <a class="btnn btnn-icon btnn-facebook" href="login">
+                      <i class="fa fa-facebook"></i>
+                      <span>LOG IN</span>
+                    </a>
+                  </div>
+
+                  <div class="media-container">
+                    <a class="btnn btnn-icon btnn-google" href="register">
+                      <i class="fa fa-google"></i>
+                      <span>SIGN UP</span>
+                    </a>
+                  </div>
+                  <div class="media-container">
+                    <a class="btnn btnn-icon btnn-twitter" href="question">
+                      <i class="fa fa-twitter"></i>
+                      <span>QUESTION ASK</span>
+                    </a>
+                  </div>
                 </div>
-                <div class="media-container">
-                   <a class="btnn btnn-icon btnn-google" href="register"><i class="fa fa-google">
-              </i><span>SIGN IN</span></a>
-                </div>
-                 <div class="media-container">
-                   <a class="btnn btnn-icon btnn-twitter" href="question"><i class="fa fa-twitter">
-              </i><span>QUESTION ASK</span></a>
-                </div>
-                
               </div>
+            </div>
           </div>
-          
         </div>
-                
-        </div>
+      </div>
     </div>
   </div>
-  </div>
-  
-</div>
 </template>
+
+<script>
+export default {
+  data() {},
+  computed: {}
+};
+</script>
 <style>
 .container {
   width: 100vw;
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1478916813757-c14a1ce81e3e?auto=format&fit=crop&w=2767&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D') no-repeat center center fixed;
+  background: url("https://images.unsplash.com/photo-1478916813757-c14a1ce81e3e?auto=format&fit=crop&w=2767&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D")
+    no-repeat center center fixed;
   background-size: cover;
 }
-#logo{
+#logo {
   max-width: 250px;
   z-index: 13;
   position: relative;
@@ -58,15 +70,15 @@
 }
 .form-container-in {
   position: absolute;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   top: 0;
   left: 0;
-  right:0;
+  right: 0;
   bottom: 0;
   opacity: 0.9;
 }
 .log-container {
-   text-align: center;
+  text-align: center;
 }
 .flex-container {
   width: 100%;
@@ -85,7 +97,7 @@ p.lead {
   width: 100%;
 }
 .left-divider {
-  border-left: solid 1px #78909C;
+  border-left: solid 1px #78909c;
   padding-left: 20px;
 }
 .lead-text {
@@ -99,27 +111,27 @@ p.lead {
 }
 /* social */
 #social-media {
-  position:relative;
-  top:100px;
-  top:25vh;
-  font-size:1rem;
-  text-align:center;
-  overflow:hidden;
+  position: relative;
+  top: 100px;
+  top: 25vh;
+  font-size: 1rem;
+  text-align: center;
+  overflow: hidden;
 }
 
 .btnn {
-  width:100%;
-  clear:both;
-  white-space:nowrap;
-  font-size:.8em;
-  display:block;
-  border-radius:5px;
+  width: 100%;
+  clear: both;
+  white-space: nowrap;
+  font-size: 0.8em;
+  display: block;
+  border-radius: 5px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35);
-  margin:2px;
-  -webkit-transition:all .5s;
-  -moz-transition:all .5s;
-  transition:all .5s;
-  overflow:hidden
+  margin: 2px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  overflow: hidden;
 }
 
 .btnn:hover {
@@ -130,89 +142,94 @@ p.lead {
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
-.btnn > span,.btnn-icon > i {
-  float:left;
-  padding:13px;
-  -webkit-transition:all .5s;
-  -moz-transition:all .5s;
-  transition:all .5s;
-  line-height:1em
+.btnn > span,
+.btnn-icon > i {
+  float: left;
+  padding: 13px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  line-height: 1em;
 }
 
 .btnn > span {
-  padding:14px 18px 16px;
-  white-space:nowrap;
-  color:#FFF;
-  background:#b8b8b8
+  padding: 14px 18px 16px;
+  white-space: nowrap;
+  color: #fff;
+  background: #b8b8b8;
 }
 
 .btnn:hover > span {
-  color:#212121;
-  font-weight:900;
+  color: #212121;
+  font-weight: 900;
 }
 
 .btnn:focus > span {
-  background:#9a9a9a
+  background: #9a9a9a;
 }
 
 .btnn-icon > i {
-  border-radius:5px 0 0 5px;
-  position:relative;
-  width:20px;
-  text-align:center;
-  font-size:1.25em;
-  color:#fff;
-  background:#212121
+  border-radius: 5px 0 0 5px;
+  position: relative;
+  width: 20px;
+  text-align: center;
+  font-size: 1.25em;
+  color: #fff;
+  background: #212121;
 }
 
 .btnn-icon > i:after {
-  content:"";
-  border:8px solid;
-  border-color:transparent transparent transparent #222;
-  position:absolute;
-  top:13px;
-  right:-15px
+  content: "";
+  border: 8px solid;
+  border-color: transparent transparent transparent #222;
+  position: absolute;
+  top: 13px;
+  right: -15px;
 }
 
-.btnn-icon:hover > i,.btnn-icon:focus > i {
-  color:#FFF;
+.btnn-icon:hover > i,
+.btnn-icon:focus > i {
+  color: #fff;
 }
 
 .btnn-icon > span {
-  border-radius:0 5px 5px 0
+  border-radius: 0 5px 5px 0;
 }
 
 /*Facebook*/
-.btnn-facebook:hover > i,.btnn-facebook:focus > i {
-  color:#3b5998;
-  width:50%;
+.btnn-facebook:hover > i,
+.btnn-facebook:focus > i {
+  color: #3b5998;
+  width: 50%;
 }
 
 .btnn-facebook > span {
-  background:#3b5998;
-  width:50%;
+  background: #3b5998;
+  width: 50%;
 }
 
 /*Facebook*/
-.btnn-twitter:hover > i,.btnn-twitter:focus > i {
-  color:#3b5998;
-  width:50%;
+.btnn-twitter:hover > i,
+.btnn-twitter:focus > i {
+  color: #3b5998;
+  width: 50%;
 }
 
 .btnn-twitter > span {
-  background:#3b5998;
-  width:50%;
+  background: #3b5998;
+  width: 50%;
 }
 
 /*Google Plus*/
-.btnn-google:hover > i,.btnn-google:focus > i {
-  color:#d34836;
-  width:50%;
+.btnn-google:hover > i,
+.btnn-google:focus > i {
+  color: #d34836;
+  width: 50%;
 }
 
 .btnn-google > span {
-  background:#d34836;
-  width:50%;
+  background: #d34836;
+  width: 50%;
 }
 .media-container {
   padding: 5px 20px;
