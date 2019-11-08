@@ -8,6 +8,7 @@
         <textarea class="form-control" id="exampleFormControlTextarea1" v-model="text" rows="3"></textarea>
       </div>
     </form>
+
     <button class="btn btn-primary" @click="addQuestion">Add</button>
   </div>
 </template>
@@ -33,7 +34,9 @@ export default {
       //  console.log(this.add);
       //  let $user=localStorage.getItem("user");
       //  console.log( $user);
-      this.add.UID = 3;
+
+      this.add.UID = localStorage.getItem("UID");
+
       this.add.question = this.text;
       console.log("****************");
       console.log(this.add.question);

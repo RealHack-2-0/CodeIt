@@ -73,6 +73,7 @@ nested dropdown">
           </div>
         </div>
       </div>
+
       <br />
     </div>
   </div>
@@ -109,7 +110,6 @@ export default {
     },
     questionItems() {
       axios
-
         .post(this.$baseUrl + "/getQuestions")
         .then(response => {
           this.question = response.data.question;

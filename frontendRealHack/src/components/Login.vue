@@ -80,9 +80,14 @@ export default {
           console.log($token);
 
           if ($token) {
-            console.log($token);
+            //console.log(response.data.user);
+                  
+            
+            console.log(response.data.user);
             localStorage.setItem("token", $token);
-            localStorage.setItem("user", response.data.user);
+            localStorage.setItem("UID", response.data.user.UID);
+          //  console.log(localStorage.getItem("UID"));
+
 
          let $user=localStorage.getItem("user");
             console.log( $user);

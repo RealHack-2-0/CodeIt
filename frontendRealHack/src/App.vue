@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    
-
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Store from "./store.js";
+
 export default {
   name: "app",
   data() {
@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

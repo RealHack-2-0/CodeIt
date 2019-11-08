@@ -18,6 +18,14 @@ class userController extends Controller
 
      }
 
+     public function me(){
+
+        $user =auth()->user();
+        
+        return response()->json(['user'=>$user],200);
+
+     }
+
 
      public function register(Request $request)
     {

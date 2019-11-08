@@ -13,10 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['jwt.verify']], function() {
+
+    Route::post('user', 'UserController@me');
+    Route::post('/question/add', 'QuestionController@ask');
+
+Route::post('/logout', 'userController@logout');
+
+    
+
 });
 
+
+Route::get('question', 'QuestionController@getAll');
+    
 
 Route::get('getUser', 'userController@getAll');
 
@@ -29,3 +39,4 @@ Route::post('/downVote', 'QuestionController@downVote');
 Route::post('/getQuestions', 'QuestionController@getAll');
 Route::post('/answer', 'AnswerController@answer');
 Route::post('/getAnswers', 'AnswerController@getAnswers');
+
