@@ -17,7 +17,7 @@ class AnswerController extends Controller
         
 
          $table = new answer;
-			$table->UID = $request->input('UID');
+			
          
 			$table->QID = $request->input('QID');
 			$table->answer = $request->input('answer');
@@ -28,7 +28,7 @@ class AnswerController extends Controller
          //   $user=auth()->user();
 
 
-            event(new CommentAdded($request->input('answer'),$user));
+           
 
 
          return response()->json(['answer' => $table]);
